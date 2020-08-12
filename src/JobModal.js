@@ -8,10 +8,6 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
 import Chip from '@material-ui/core/Chip';
 
-const Transition = React.forwardRef(function Transition(props, ref) {
-    return <Slide direction="up" ref={ref} {...props} />;
-  });
-
   export default function JobModal({job,  open, handleClose}) {
     
     if (!job.title) {
@@ -22,7 +18,6 @@ const Transition = React.forwardRef(function Transition(props, ref) {
       <div>
         <Dialog
           open={open}
-          TransitionComponent={Transition}
           keepMounted
           onClose={handleClose}
           aria-labelledby="alert-dialog-slide-title"
@@ -31,7 +26,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
           <DialogTitle id="alert-dialog-slide-title">
             {job.title} - 
             {job.company}
-            {/* <img className={'detail-logo'} src={job.company_logo} /> */}
+            {<img className={'detail-logo'} src={job.company_logo} alt="no logo"/>}
           </DialogTitle>
           <DialogContent>
             <DialogContentText 
