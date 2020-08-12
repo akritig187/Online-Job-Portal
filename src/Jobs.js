@@ -7,16 +7,6 @@ import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 
 export default function Jobs({jobs}) {
-    React.useEffect(() => {
-        const welcomeItem= document.querySelectorAll('.welcome-item');
-        let delay = 0;
-        welcomeItem.forEach(item => {
-            setTimeout(() => item.style.opacity = 1, delay);
-            delay += 500;
-        })
-    }, []);
-
-    // modal
     const [open, setOpen] = React.useState(false);
     const [selectedJob, selectJob] = React.useState({});
     function handleClickOpen() {
